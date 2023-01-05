@@ -1,0 +1,15 @@
+---
+title: "Sci Fi"
+date: 2022-12-28T19:01:39-08:00
+draft: true
+tags:
+- fiction
+categories:
+- fiction
+---
+
+Time travel is invented, but the reason we never see anyone from the future is that the technology will send you back in time to the same place in space. Since the earth is moving so quickly through space the planet will no longer be there and you will be sitting in the void of space. Story opens with an alien crew tracking the earth by the debris sent back in time. A linear record, but not in order of what went back. Some people who went way back in time first. it will be interesting to describe what they were wearing. Then people who tried to go less far back in time. A few clusters of people who went back to rescue or be with lost loved ones. Then upon the discovery that no one can come back from the past and that they are all dying in space (someone does an experiment to go back only a short distance in time and happens to end up on the moon), there is just trash. People use the technology to send trash off the planet. And execute people. The aliens following the waste stream to find the earth know how to read their place in the stream by the fact that there are many planets following a predictable evolution with the technology. The further back in time something gets sent the more energy it requires, so trash is predictably not sent back too far in time. They call the planet hunting something like whaling. They find planets and using basic physics and send the time travel technology to them by sending it back in time from their planet to when that planet was in the same spot. In some cases it lands before life is even present.
+
+On the planet there are phases of use of the time travel tool. Eventually it comes to be used as a weapon small versions can be used on the battlefield to transport soldiers back in time after being shot, if you only go back a few milliseconds you will only move a few feet. A nanosecond at the speed of light is a foot. A millisecond is a thousand feet. Going back in time jumps you up in the air depending on how far back you go. There's some calculation about how fast the universe is expanding, the galaxy is spinning, the earth is turning as a percent of the speed of light. Is it possible that the speed rotating of the earth and spinning back in the galaxy can be a big enough percentage of the expansion speed that people would not move on the planet if the exact right time. 
+
+The whalers want to find the planets before they learn how to seed and hunt other planets. Eventually most people on the planets are dead from being sent back. They get excited when they see large clusters of people indicating wars. Less resistance when they finally find the planet. They travel through space using the same time travel technology in the forward direction. An advanced use case of the technology that they try to prevent other planets from using. Juxtaposition between deterministic use of technologies (look up the name of that machine that had deterministic outcomes for rats) and fatalism implied by the time travel. 

@@ -1,0 +1,1 @@
+Hugo static site blog with the PaperMod theme.

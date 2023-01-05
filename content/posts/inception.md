@@ -1,12 +1,14 @@
 ---
-title: "Introduction"
+title: "The Inception of This Blog"
 date: 2022-12-26T10:39:35-08:00
-draft: true
+draft: false
+tags:
+- software dev
+categories: 
+- development
 ---
 
-# Welcome to my blog
-
-Welcome, I am using this blog to explore my interests. Anything that excites me enough to keep me up into the wee hours tinkering. Hence the title NightNoon, as in "Should I go to bed? No! It's barely night noon."
+Welcome, I am using this blog to explore my interests. Anything that excites me enough to keep me up into the wee hours tinkering is fare play for the blog. Hence the title NightNoon, as in "Should I go to bed? No! It's barely night noon."
 
 The site is built using Hugo which will serve as the first topic to explore for the blog. I'm taking a page from [Simon Willison](https://simonwillison.net) who has suggested blogging in bite size chunks and starting with TIL posts.
 
@@ -34,6 +36,12 @@ git submodule update --init --recursive # needed when you reclone your repo (sub
 1. See your new site with `hugo server` then go to http://localhost:1313.
 
 ## Next steps
+
+Deploy on Github pages. 
+1. Create a repository with your github username: `<USERNAME>.github.io`. See more information about [github pages])(https://pages.github.com)
+1. Check out the github pages repository as a submodule into the public directory in your Hugo project. `git submodule add git@github.com:<USERNAME>/<USERNAME>.github.io.git public`.
+1. After generating some content create the site `hugo` then add the output to the public directory `cd public && git add .`.
+1. Next steps: deploy with github actions [Hugo deployment docs](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
 
 ### Make a favicon
 
