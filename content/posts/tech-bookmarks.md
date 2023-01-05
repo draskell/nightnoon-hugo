@@ -5,7 +5,7 @@ draft: false
 tags:
 - software dev
 categories: 
-- development
+- software dev
 ---
 
 # Technical Utility Bookmarks

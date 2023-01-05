@@ -1,5 +1,5 @@
 ---
-title: "Boredjar"
+title: "Bored Jar"
 date: 2022-12-28T18:40:55-08:00
 draft: false
 tags:
@@ -7,6 +7,7 @@ tags:
 - software dev
 categories: 
 - kids
+- software dev
 ---
 
 # Bored Jar

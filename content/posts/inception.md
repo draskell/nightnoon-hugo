@@ -5,7 +5,7 @@ draft: false
 tags:
 - software dev
 categories: 
-- development
+- software dev
 ---
 
 Welcome, I am using this blog to explore my interests. Anything that excites me enough to keep me up into the wee hours tinkering is fare play for the blog. Hence the title NightNoon, as in "Should I go to bed? No! It's barely night noon."
