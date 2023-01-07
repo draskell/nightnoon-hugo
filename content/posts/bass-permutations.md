@@ -8,8 +8,6 @@ categories:
 - music
 ---
 
-# Bass Permutations Exercise
-
 This is a left hand four finger exercise to train all of the left hand inter-finger permutations. The idea is to assign a finger to each fret and go through each of the 24 possible permutations. Start slowly then build up the speed, but keep it rhythmic, see how fast you can go. The trick to going faster is mastering slower speeds though.
 
 It's a pretty great warm up because it gets all of the fingers involved.
