@@ -38,7 +38,7 @@ The strategy to replicating the song is:
 
 ### Opening 16th Notes
 
-The song starts out with repeated sixteenth notes. This is the easy part of the song for the left hand which is our focus in this discussion. To get the 16th notes, there's no quick tricks. Start slow playing 16th notes with alternating fingers with a metronome. Work up the pace until you can match the song. Focus on getting it clean slow first then slowly bring up the speed. It's bad practice to set the speed higher than you can cleanly muster and play sloppy. 
+The song starts out with repeated sixteenth notes. This is the easy part of the song for the left hand which is our focus in this discussion. To get the 16th notes, there's no quick tricks. Start slow playing 16th notes with alternating fingers with a metronome. Work up the pace until you can match the song. Focus on getting it clean slow first then slowly bring up the speed. It's bad practice to play sloppily at a speed higher than you can cleanly muster. 
 
 Keep the alternation consistent even when switching strings. The index is always on the 1. 
 
