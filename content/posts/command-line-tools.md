@@ -13,3 +13,6 @@ Password file management
 Aliases
 - Aborist, to remove merged local branches: `alias arborist="git branch --merged | egrep -v \"(^\*|master|main|release-candidate|dev)\" | xargs git branch -d"`
 - Git push with set upstream if needed: `alias gpu='[[ -z $(git config "branch.$(git symbolic-ref --short HEAD).merge") ]] && git push -u origin $(git symbolic-ref --short HEAD) || git push'`
+
+SSH-Agent Starter
+

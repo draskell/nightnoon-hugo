@@ -23,3 +23,9 @@ A great sandbox for evaluating regular expressions: [regex101](https://regex101.
 ## SQL Online IDE
 
 The SQL online IDE is a simple interface over a couple of common dialects: [SQL online IDE](https://sqliteonline.com). You're not going to use it to build a DB, but it can be useful when working HackerRank SQL problems or prototyping data models.
+
+## Mockaroo
+
+A tool for making simple mock data sets. I haven't tested out the login features, but the basic functionality is really useful.
+
+https://mockaroo.com
