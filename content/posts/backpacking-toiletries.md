@@ -1,5 +1,5 @@
 ---
-title: "Backpacking Toiletries"
+title: "Backpacking Rig Notes"
 date: 2022-12-28T18:44:53-08:00
 draft: true
 tags:

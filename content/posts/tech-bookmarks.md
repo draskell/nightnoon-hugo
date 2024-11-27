@@ -29,3 +29,9 @@ The SQL online IDE is a simple interface over a couple of common dialects: [SQL 
 A tool for making simple mock data sets. I haven't tested out the login features, but the basic functionality is really useful.
 
 https://mockaroo.com
+
+## Neetcode.io
+
+Great resource for preparing for software developer interviews. 
+
+https://neetcode.io

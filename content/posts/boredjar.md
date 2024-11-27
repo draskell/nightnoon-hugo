@@ -58,7 +58,7 @@ Each tasks should be expected to take about 15 minutes. The list may need to be 
 
 Make a script named `bored.py` with this content (update the cards as you see fit):
 
-```
+``` Python
 import random
 
 cards = [

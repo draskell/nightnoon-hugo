@@ -12,6 +12,213 @@ Welcome, I am using this blog to explore my interests. Anything that excites me 
 
 The site is built using Hugo which will serve as the first topic to explore for the blog. In this change log style post I am taking a page from [Simon Willison](https://simonwillison.net) who has suggested blogging in bite size chunks and starting with TIL posts. In my case more like this-month-I-learned TMIL.
 
+# November, 2024: Sorting Algorithms
+
+Recently in preparation for a technical interview at Microsoft I was asked to come to the interview prepared to write at least one sorting algorithm. This turned out to be a fun rabbit hole. I'd always taken for granted the built in sorting algorithms in languages like Python, but what algorithm is being used? (spoiler its Timsort) and how can I implement it?
+
+Looking into the Python built-in `sorted` function I found it used  the "timsort" algorithm which was completely new to me. Looking it up I found it to be a composite algorithm based off two simpler methods "insertion sort" and "merge sort".
+
+## Insertion Sort
+
+Insertion sort is a simple algorithm which is known to be efficient, O(n), on small data, especially real world data which might be close to sorted already and may contain many duplicate records. On large, more random data it is generally not very efficient O(n2). In either case it has a memory complexity of O(1).
+
+Reading about insertion sort also introduced me to the idea of "stable" sorting, whether or not the sorting algorithm keeps the original sort order of items with equal value in the list.
+
+
+### Stable Sorting Example
+
+Imagine rather than sorting simply integers the goal is to sort objects representing people on one of the attributes like age, for example:
+
+``` Python
+l = [
+    {
+        "birth_year": 1963,
+        "name": "Michael Jordan",
+    },
+    {
+        "birth_year": 1980,
+        "name": "Tim Peters",
+    },
+    {
+        "birth_year": 1963,
+        "name": "Les Claypool",
+    }
+]
+```
+
+If we sort by birth year the two people born in 1963 may or may not stay in the original order, ie Michael Jordan before Les Claypool. If they stay in the original order the sorting algorithm is said to be stable.
+
+### Insertion Sort Implementation
+
+Insertion sort works by looking at an element in the list (starting with the second element) and checking each element before it to see if it's bigger. If so that element is moved one element down the list and the next element is considered.
+
+![Insertion Sort](/posts/inception/insertion-sort.gif)
+
+``` Python
+def insertion_sort(array: List):
+    """
+    Sorts the input array using the insertion sort algorithm.
+
+    Args:
+        array (List): a list which can be sorted. The iterable array
+            in this case must be a list because it is expected to be mutable
+            for simplicity sake.21`
+
+    Returns (List):
+        The sorted list.
+    """
+    # Start from the second element in the list as the current
+    # index (i).
+    for i in range(1, len(arr))
+        key = arr[i]
+        # Start the search index (j) as the element before.
+        j = i - 1
+
+        # While the search index (j) is positive, still in the list
+        # and the jth element is still larger than the current element
+        # then move the jth element one position toward the end and
+        # decrement the search index.
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+
+        # Once the while condition is no longer valid, either because
+        # the value at the jth position is now less than the current 
+        # position key or the search index has reached the beginning of
+        # the list (j = -1), then set the value after the search index to
+        # the current key.
+        arr[j + 1] = key
+
+    # After iterating through the whole array the arr will be sorted
+    # and can be retured.
+    return arr
+
+```
+
+## Merge Sort
+
+Merge sort is an algorithm which can be used on it's own to sort an array. It relies on a fundamental "merge" operation which takes two sorted lists and interleaves them in a way that preserves the sort order of the resulting list.
+
+The merge operation:
+``` Python
+def merge(arr1, arr2):
+    """
+    Takes two sorted lists and returns a combined sorted list.
+    """
+    # Initialize a result list.
+    res = []
+
+    # Start the pointers for the first and second list to 0.
+    i,j = 0,0
+    # While the pointer index for the first list (i) is less than the length
+    # of the first list and the pointer index for the second list (j) are
+    # less than the lengths of the respective lists.
+    while i < len(arr1) and j < len(arr2):
+        # If the pointed value in the first array is less than the pointed 
+        # value in the second array append the first array value to the result
+        # and increment the corresponding pointer. Otherwise do the opposite.
+        if arr1[i] < arr2[j]:
+            res.append(arr1[i])
+            i += 1
+        else:
+            res.append(arr2[j])
+            j += 1
+    # After the end of one list has been reached the other list may have
+    # values which need to be added. We can just add the remainder of both
+    # lists beyond the pointer one of which won't contain any values.
+    res.extend(arr1[i:])
+    res.extend(arr2[j:])
+    return res
+```
+
+Given this merge functionality it's possible to implement another sorting strategy called "merge sort". Here's a recursive example of the merge sort algorithm:
+
+``` Python
+def merge_sort(arr):
+    """
+    A recursive algorithm for sorting an array using merge sort.
+
+    """
+    # Base case, an array of length one is sorted by default.
+    if len(arr) <= 1:
+        return arr
+    
+    # Find the middle index of the array.
+    middle = len(arr) // 2
+    # Split the array into a left and right array around the middle index.
+    left = arr[:middle]
+    right = arr[middle:]
+    # Recursively call merge_sort on each side.
+    left = merge_sort(left)
+    right = merge_sort(right)
+    # Use the merge function to combine the two sorted halves of the input
+    # array.
+    return merge(left, right)
+```
+
+Timsort doesn't use the full merge sort implementation, rather it uses the "insertion sort" algorithm to efficiently sort small sub arrays and the `merge` function to then combine the sorted sub arrays. 
+
+Here's an example impementation of timesort in Python:
+
+``` Python
+def timsort(arr, sub_size=32):
+    """
+    """
+    # Initialize a first in first out (FIFO) queue of sorted sub-arrays to merge.
+    subs = deque()
+    # Iterate through the sub lists, sort them with insertion sort, and append
+    # them to the queue
+    for i in range(0, len(arr), subsize):
+        subs.append(insertion_sort(arr[i:i+subsize]))
+
+    # While there are more than one list in the queue use merge to combine
+    # the first two lists in the queue and append the result to the end.
+    while len(subs) > 1:
+        left = subs.popleft()
+        right = subs.popleft()
+        subs.append(merge(left,right))
+    return subs[0]
+```
+
+There are a lot of efficiencies that can be used and quick profiling of this implementation vs the built in C-implementation of `sorted` reveals it's a lot slower, but I think these examples convey the overall idea of the sorting strategies:
+
+``` Python
+In [0]: arr = [random.randint(0,10000) for _ in range(10_000)]
+
+In [1]: %timeit sorted(arr)
+1.19 ms ± 7.36 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+
+In [11]: %timeit timsort(arr)
+379 ms ± 24.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+```
+
+## BONUS: Quicksort
+
+I think my favorite sorting strategy that I found while studying for the interview was Quicksort. Here's an especially elegant recursive implementation in O(nlogn):
+
+``` Python
+def quicksort(arr):
+    
+    if len(arr) <= 1:
+        return arr
+
+    pivot_index = len(arr) // 2
+    pivot_value = arr[pivot_index]
+
+    middle = [x for x in arr if x == pivot_value]
+    less = [x for x in arr if x < pivot_value]
+    more = [x for x in arr if x > pivot_value]
+
+    return quicksort(less) + middle + quicksort(more)
+```
+
+Profiling for comparison:
+```
+In [0]: %timeit quicksort(arr)
+19.6 ms ± 70.9 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+```
+__NOTE__: this is random integer data not "real world" data and most of the benefits of defaulting to timsort are realized when considering real world data and sorting strings.
+
 # October, 2024: Positive and Unlabeled Learning
 
 Positive and unlabeled learning (PUL) is a semi-supervised method of binary classification available when positive samples are reliable and negative samples are missing or unreliable. 
@@ -26,7 +233,7 @@ The goal of the PU learning is to create a function `f` such that f(x) = p(y = 1
 
 Starting with a random n-class classification problem we make an additional set of PU labels pu_y ∈ {-1,1}:
 
-```
+``` Python
 from sklearn.datasets import make_classification
 from sklearn.metrics import accuracy_score
 
@@ -66,7 +273,7 @@ x, y, pu_y = make_pu_classification()
 
 In this case we're keeping the full labels as an accuracy test. We can see the traditional classification with an SVM model as a baseline for the PU algorithm:
 
-```
+``` Python
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=None)
 
 # Initialize and train the SVC model. 
@@ -82,11 +289,12 @@ print(f'Accuracy: {accuracy_score(y_test, y_pred):.2f}')
 Out:
     Accuracy: 0.93
 ```
+
 __NOTE__: The accuracy will vary depending on the random data created for the problem.
 
 Next we'll set up for the PU algorithm described in the unweighted PU learning algorithm (2). We choose an SVM model for `g`, the non-traditional classifier g(x) = p(s = 1|x) of the conditional probability that a sample will be labeled. We choose a validation set size for the untraditional model `g` and a threshold on the probability to consider conclusive in the binary binning of the model.
 
-```
+``` Python
 # Define an estimator for non-traditional classifier g(x) = p(s = 1|x), the conditional probability
 # that a sample is labeled (s = 1) given the features x. 
 g = SVC(probability=True)
@@ -108,7 +316,7 @@ validation_indices = all_indices[:validation_size]
 
 Finally we train the model and check the accuracy:
 
-```
+``` Python
 x_validation = x[validation_indices]
 y_validation = pu_y[validation_indices]
 x_pos_validation = x_validation[np.where(y_validation == 1)]

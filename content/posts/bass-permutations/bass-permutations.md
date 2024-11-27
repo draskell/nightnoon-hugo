@@ -24,7 +24,7 @@ Pick a fret which doesn't require too much pinky strength to start off with, I l
 
 I'm going to use a number to represent each finger for simplicity: index is 1, middle is 2, ring is 3, and pinky is 4. This can also be thought of as the fret number where the 7th fret is "1", 8th is "2", etc. It doesn't matter where on the neck you play.
 
-![Numbered Fingers](/posts/bass-permutations/numbered_fingers.png)
+![Numbered Fingers](/numbered_fingers.png)
 
 The permutations are as follows:
 
@@ -85,7 +85,7 @@ Mastering this exercise with rhythm at a pace like 120 BPM could take a really l
 
 This is a simple Python script to find the permutations. 
 
-```
+``` Python
 #!/usr/bin/env python3
 # make_permutations.py
 
